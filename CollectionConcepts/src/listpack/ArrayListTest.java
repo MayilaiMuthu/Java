@@ -31,6 +31,8 @@ public class ArrayListTest {
 		
 		a.add(1, "He");
 		
+		logger.debug(a);
+		
 		Iterator<String> itr=a.iterator();
 		
 		while(itr.hasNext()) {

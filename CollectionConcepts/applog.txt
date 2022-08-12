@@ -12,3 +12,10 @@ INFO    2022-08-11 10:57:53,373 [main] listpack.ArrayListTest  - HI
 INFO    2022-08-11 10:58:10,858 [main] listpack.ArrayListTest  - HI
 INFO    2022-08-11 10:58:10,860 [main] listpack.ArrayListTest  - He
 INFO    2022-08-11 10:58:10,860 [main] listpack.ArrayListTest  - HI
+INFO    2022-08-11 12:31:16,739 [main] listpack.ArrayListTest  - HI
+INFO    2022-08-11 12:31:16,741 [main] listpack.ArrayListTest  - He
+INFO    2022-08-11 12:31:16,741 [main] listpack.ArrayListTest  - HI
+DEBUG   2022-08-11 12:31:38,787 [main] listpack.ArrayListTest  - [HI, He, HI]
+INFO    2022-08-11 12:31:38,789 [main] listpack.ArrayListTest  - HI
+INFO    2022-08-11 12:31:38,789 [main] listpack.ArrayListTest  - He
+INFO    2022-08-11 12:31:38,789 [main] listpack.ArrayListTest  - HI
