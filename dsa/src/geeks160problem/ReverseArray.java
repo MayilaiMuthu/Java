@@ -35,7 +35,7 @@ public class ReverseArray {
 	public static void main(String[] args) {
 		int[] arr = { 1, 4, 3, 6, 5 };
 		reverseArray(arr);
-		for (int i = 0; i < arr.length - 1; i++) {
+		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i]);
 		}
 	}
