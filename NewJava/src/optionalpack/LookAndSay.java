@@ -1,74 +1,51 @@
-package com.anoud.pi.azure.service;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class LookAndSay {
 
 	private void lookAndSay(int n) {
-		List<String> a = new ArrayList<>();
-		List<String> d = new ArrayList<>();
-		a.add("1");
+		List<Integer> a = new ArrayList<>();
+		List<Integer> b = new ArrayList<>();
 		for (int i = 0; i < n; i++) {
-			a.stream().forEach(System.out::print);
-			int count = 1;
-			int row = 0;
-			boolean flag = false;
-			d.clear();
-			d.addAll(a);
-			if (d.size() > 1) {
-				a.clear();
-				for (int j = 0; j < d.size() - 1; j++) {
-					if (Integer.parseInt(d.get(j)) != Integer.parseInt(d.get(j+1))) {
-						count = 1;
-						if (!flag) {
-							a.add(row, String.valueOf(count));
-							row++;
-							a.add(row, String.valueOf(d.get(j)));
-							row++;
-							if (count % 2 == 0) {
-								flag = false;
-							} else {
-								flag = true;
-							}
-						}
-						a.add(row, String.valueOf(count));
-						row++;
-						a.add(row, String.valueOf(d.get(j + 1)));
-						row++;
-					} else {
-						if (row > 2) {
-							a.remove(row - 1);
-							a.remove(row - 2);
-							row = row - 2;
-							if (!flag) {
-								a.remove(row - 1);
-								a.remove(row - 2);
-								row = row - 2;
-							}
-						} else if (row > 0) {
-							a.remove(row - 1);
-							a.remove(row - 2);
-							row = row - 2;
-						}
-						count++;
-						a.add(row, String.valueOf(count));
-						row++;
-						a.add(row, String.valueOf(d.get(j)));
-						row++;
-						flag = true;
-					}
-				}
+			b.clear();
+			b.addAll(a);
+			if (b.size() <= 1) {
+				a.add(1);
 			} else {
-				a.add("1");
+				int count = 1;
+				int row = 0;
+				a.clear();
+				for (int j = 0; j < b.size() - 1; j++) {
+					int value = b.get(j);
+					if (b.get(j) != b.get(j + 1)) {
+						count = 1;
+						if (j == 0) {
+							a.add(row++, count);
+							a.add(row++, b.get(j));
+						}
+						value = b.get(j + 1);
+					} else {
+						if (row > 3 && j == 0) {
+							a.remove(--row);
+							a.remove(--row);
+						} else if (row > 1) {
+							a.remove(--row);
+							a.remove(--row);
+						}
+						++count;
+					}
+					a.add(row++, count);
+					a.add(row++, value);
+				}
 			}
+			a.stream().forEach(System.out::print);
 			System.out.println("");
 		}
 	}
 
 	public static void main(String[] args) {
 		LookAndSay t = new LookAndSay();
-		t.lookAndSay(7);
+		t.lookAndSay(10);
 	}
 
 }
